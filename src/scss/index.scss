@@ -1,1 +1,145 @@
+@import "../../node_modules/bootstrap/scss/bootstrap";
 
+// Path: src/scss/styles.scss
+
+// $primary: rgb(227, 226, 226);
+$colours: (
+  "primary": #26BFBF,
+  "secondary": #F39237,
+  "tertiary": #f39237c8, 
+  "quaternary": #26bfbf8b,
+  "white-text": #ffffff,
+  "black-text": #000000,
+  "invalide": #ff0000,
+);
+
+@mixin button-border($radius) {
+    border-radius: $radius;
+    border: 2px solid map-get($colours, "primary");
+    color: map-get($colours, "primary");
+}
+
+@mixin flex-form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: stretch;
+  // margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+@mixin invalid-feedback {
+  color: map-get($colours, "invalide");
+  display: none;
+}
+
+@mixin input-border($radius) {
+  border-radius: $radius;
+  border: 2px solid map-get($colours, "primary");
+}
+
+@mixin vibe-color {
+  color: map-get($colours, "secondary");
+  font-family: 'Sail', cursive;
+  font-size: 2rem;
+}
+
+@mixin connect-color {
+  color: map-get($colours, "primary");
+  font-family: 'Sail', cursive;
+  font-size: 2rem;
+
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 15px solid map-get($colours, "primary");
+  height: 100vh;
+  font-family: poppins;
+};
+
+input {
+  @include input-border(10px);
+  padding: 1rem 2rem;
+  
+  font-weight: 700;
+  color: map-get($colours, "primary");
+  transition: all 0.3s ease-in-out;
+  &:focus {
+    outline: none;
+    border: 2px solid map-get($colours, "secondary");
+  }
+  &:focus ~ .invalid-feedback {
+    display: block;
+  }
+};
+
+button {
+@include button-border(10px);
+background-color: map-get($colours, "primary");
+color: map-get($colours, "white-text");
+font-size: 1rem;
+font-weight: 500;
+padding: .3rem;
+height: 3.5rem;
+// margin: 1rem;
+cursor: pointer;
+transition: all 0.3s ease-in-out;
+&:hover {
+    background-color: map-get($colours, "white-text");
+    color: map-get($colours, "primary");
+    border: 2px solid map-get($colours, "primary");
+}
+};
+.invalid-feedback {
+  @include invalid-feedback;
+}
+.flex-form {
+    @include flex-form;
+}
+.form-control {
+  border: 1px solid map-get($colours, "primary");
+  border-radius: 10px;
+}
+.vibe-color {
+  @include vibe-color;
+};
+.connect-color {
+  @include connect-color;
+};
+.vibe-color-footer {
+  @include vibe-color;
+  font-size: 1.3rem;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  width: 100%;
+  margin-top: 1rem;
+}
+.connect-color-footer {
+  @include connect-color;
+  font-size: 1.3rem;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+
+.sign-up {
+  color: map-get($colours, "primary");
+  background-color: map-get($colours, "white-text");
+  border: 2px solid map-get($colours, "primary");
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    font-weight: 1000;
+  }
+}
+.height {
+  height: 2rem !important; 
+} 
