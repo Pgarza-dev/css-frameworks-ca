@@ -82,7 +82,7 @@ body {
   @include main-border;
   border-bottom: none;
   font-family: poppins;
-  height: 150vh;
+  height: 100vh;
   margin-bottom: 0rem;
 };
 nav {
@@ -195,6 +195,18 @@ transition: all 0.3s ease-in-out;
     outline: none;
     background-color:  map-get($colours, "primary");
     color: map-get($colours, "white-text");
+  }
+};
+textarea {
+  @include input-border(10px);
+  color: map-get($colours, "primary");
+  transition: all 0.3s ease-in-out;
+  &:focus {
+    outline: none;
+    border: 2px solid map-get($colours, "secondary");
+  }
+  &:focus ~ .invalid-feedback {
+    display: block;
   }
 };
 
