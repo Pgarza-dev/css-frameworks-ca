@@ -6,7 +6,7 @@
 $colours: (
   "primary": #26BFBF,
   "secondary": #F39237,
-  "tertiary": #f39237c8, 
+  "tertiary": #F7B678b8, 
   "quaternary": #26bfbf8b,
   "white-text": #ffffff,
   "black-text": #000000,
@@ -26,6 +26,10 @@ $colours: (
   align-items: stretch;
   // margin-bottom: 2rem;
   font-size: 2rem;
+}
+@mixin main-border {
+  border: 15px solid map-get($colours, "primary");
+  
 }
 
 @mixin invalid-feedback {
@@ -48,17 +52,55 @@ $colours: (
   color: map-get($colours, "primary");
   font-family: 'Sail', cursive;
   font-size: 2rem;
-
+};
+@mixin post-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid map-get($colours, "secondary");
+  margin: 0 0 -3rem 0;
+};
+@mixin reply-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid map-get($colours, "primary");
+  margin: 0 0 -3rem 0;
+};
+@mixin reply-container {
+  margin: 1rem 2rem;
+  background-color: map-get($colours,"quaternary" );
 }
-
+.nav-bottom-border {
+  border-bottom: 2px solid map-get($colours, "secondary");
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+};
 body {
+  @include main-border;
+  border-bottom: none;
+  font-family: poppins;
+  height: 150vh;
+  margin-bottom: 0rem;
+};
+nav {
+  @include main-border;
+  border-bottom: none;
+  margin-bottom: 0rem;
+  height: 8rem;
+};
+.footer-border {
+  border-right: 15px solid map-get($colours, "primary");
+  border-left: 15px solid map-get($colours, "primary");
+  border-bottom: 15px solid map-get($colours, "primary");
+}
+.login-page{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 15px solid map-get($colours, "primary");
-  height: 100vh;
-  font-family: poppins;
 };
 
 input {
@@ -96,14 +138,14 @@ transition: all 0.3s ease-in-out;
 };
 .invalid-feedback {
   @include invalid-feedback;
-}
+};
 .flex-form {
     @include flex-form;
-}
+};
 .form-control {
   border: 1px solid map-get($colours, "primary");
   border-radius: 10px;
-}
+};
 .vibe-color {
   @include vibe-color;
 };
@@ -118,7 +160,7 @@ transition: all 0.3s ease-in-out;
   text-align: center;
   width: 100%;
   margin-top: 1rem;
-}
+};
 .connect-color-footer {
   @include connect-color;
   font-size: 1.3rem;
@@ -127,8 +169,7 @@ transition: all 0.3s ease-in-out;
   text-align: center;
   width: 100%;
   margin-top: 1rem;
-}
-
+};
 
 .sign-up {
   color: map-get($colours, "primary");
@@ -139,7 +180,102 @@ transition: all 0.3s ease-in-out;
   &:hover {
     font-weight: 1000;
   }
+};
+
+//Feed page
+.main-margin-feed-page {
+  margin-top: 10rem;
+};
+.search-border {
+  border: 1px solid map-get($colours, "primary");
+  border-radius: 10px;
+  color: map-get($colours, "primary");
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    outline: none;
+    background-color:  map-get($colours, "primary");
+    color: map-get($colours, "white-text");
+  }
+};
+
+// Profile page
+.profile-img {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid map-get($colours, "secondary");
+  };
+.post-title,
+.followers-title,
+.following-title {
+  color: map-get($colours, "secondary");
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  width: 100%;
+  margin-top: 1rem;
+};
+.post-number,
+.followers-number,
+.following-number {
+  color: map-get($colours, "primary");
+  font-size: 1.2rem;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  width: 100%;
+  margin-top: 1rem;
+};
+.follow-btn {
+  @include button-border(10px);
+  background-color: map-get($colours, "primary");
+  color: map-get($colours, "white-text");
+  font-size: 1rem;
+  font-weight: 500;
+  padding: .3rem;
+  height: 2.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+      background-color: map-get($colours, "white-text");
+      color: map-get($colours, "primary");
+      border: 2px solid map-get($colours, "primary");
+  }
+};
+.username {
+  color: map-get($colours, "primary");
+  font-size: 1.5rem;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  width: 100%;
+  margin: 1rem 2rem;
+};
+
+.my-vibes-title {
+  color: map-get($colours, "secondary");
+  font-size: 2rem;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  width: 100%;
+  margin: 1rem 2rem;
+};
+.my-posts-container {
+  margin: 1rem 2rem;
+  background-color: map-get($colours,"tertiary" );
+};
+.reply-post {
+  margin-top: -1rem;
+};
+.my-reply-container {
+  @include reply-container;
 }
-.height {
-  height: 2rem !important; 
-} 
+.post-img {
+  @include post-img;
+};
+.reply-img {
+  @include reply-img;
+};
