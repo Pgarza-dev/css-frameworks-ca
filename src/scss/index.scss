@@ -209,6 +209,13 @@ textarea {
     display: block;
   }
 };
+.sm-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center
+};
 
 // Profile page
 .profile-img {
