@@ -30,9 +30,13 @@ $colours: (
 }
 @mixin main-border {
   border: 15px solid $primary;
-  
-}
-
+};
+@mixin secondary-border {
+  border-top: 5px solid $primary;
+  border-right: 5px solid $primary;
+  border-left: 5px solid $primary;
+  border-bottom: 2px solid $secondary;
+};
 @mixin invalid-feedback {
   color: map-get($colours, "invalide");
   display: none;
@@ -44,15 +48,12 @@ $colours: (
 }
 
 @mixin vibe-color {
-  color: map-get($colours, "secondary");
   font-family: 'Sail', cursive;
-  font-size: 2rem;
+  
 }
 
 @mixin connect-color {
-  color: $primary;
   font-family: 'Sail', cursive;
-  font-size: 2rem;
 };
 @mixin post-img {
   width: 50px;
@@ -75,22 +76,8 @@ $colours: (
   background-color: map-get($colours,"quaternary" );
 }
 
-// nav {
-//   @include main-border;
-//   border-bottom: none;
-//   margin-bottom: 0rem;
-//   height: 8rem;
-// };
-// .footer-border {
-//   border-right: 15px solid;
-//   border-left: 15px solid;
-//   border-bottom: 15px solid;
-// }
-.login-page{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+nav {
+  @include secondary-border(); 
 };
 
 input {
@@ -144,21 +131,9 @@ transition: all 0.3s ease-in-out;
 };
 .vibe-color-footer {
   @include vibe-color;
-  font-size: 1.3rem;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  width: 100%;
-  margin-top: 1rem;
 };
 .connect-color-footer {
   @include connect-color;
-  font-size: 1.3rem;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  width: 100%;
-  margin-top: 1rem;
 };
 
 .sign-up {
