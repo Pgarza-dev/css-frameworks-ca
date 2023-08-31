@@ -1,10 +1,11 @@
+$primary: #26BFBF;
+$secondary: #F39237;
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
 // Path: src/scss/styles.scss
 
-// $primary: rgb(227, 226, 226);
 $colours: (
-  "primary": #26BFBF,
+
   "secondary": #F39237,
   "tertiary": #F7B678b8, 
   "quaternary": #26bfbf8b,
@@ -15,8 +16,8 @@ $colours: (
 
 @mixin button-border($radius) {
     border-radius: $radius;
-    border: 2px solid map-get($colours, "primary");
-    color: map-get($colours, "primary");
+    border: 2px solid $primary;
+    color: $primary;
 }
 
 @mixin flex-form {
@@ -28,7 +29,7 @@ $colours: (
   font-size: 2rem;
 }
 @mixin main-border {
-  border: 15px solid map-get($colours, "primary");
+  border: 15px solid $primary;
   
 }
 
@@ -39,7 +40,7 @@ $colours: (
 
 @mixin input-border($radius) {
   border-radius: $radius;
-  border: 2px solid map-get($colours, "primary");
+  border: 2px solid $primary;
 }
 
 @mixin vibe-color {
@@ -49,7 +50,7 @@ $colours: (
 }
 
 @mixin connect-color {
-  color: map-get($colours, "primary");
+  color: $primary;
   font-family: 'Sail', cursive;
   font-size: 2rem;
 };
@@ -66,36 +67,25 @@ $colours: (
   height: 50px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid map-get($colours, "primary");
+  border: 2px solid $primary;
   margin: 0 0 -3rem 0;
 };
 @mixin reply-container {
   margin: 1rem 2rem;
   background-color: map-get($colours,"quaternary" );
 }
-.nav-bottom-border {
-  border-bottom: 2px solid map-get($colours, "secondary");
-  margin-bottom: 1rem;
-  padding-bottom: 1rem;
-};
-body {
-  @include main-border;
-  border-bottom: none;
-  font-family: poppins;
-  height: 100vh;
-  margin-bottom: 0rem;
-};
-nav {
-  @include main-border;
-  border-bottom: none;
-  margin-bottom: 0rem;
-  height: 8rem;
-};
-.footer-border {
-  border-right: 15px solid map-get($colours, "primary");
-  border-left: 15px solid map-get($colours, "primary");
-  border-bottom: 15px solid map-get($colours, "primary");
-}
+
+// nav {
+//   @include main-border;
+//   border-bottom: none;
+//   margin-bottom: 0rem;
+//   height: 8rem;
+// };
+// .footer-border {
+//   border-right: 15px solid;
+//   border-left: 15px solid;
+//   border-bottom: 15px solid;
+// }
 .login-page{
   display: flex;
   flex-direction: column;
@@ -108,7 +98,7 @@ input {
   padding: 1rem 2rem;
   
   font-weight: 700;
-  color: map-get($colours, "primary");
+  color: $primary;
   transition: all 0.3s ease-in-out;
   &:focus {
     outline: none;
@@ -121,7 +111,7 @@ input {
 
 button {
 @include button-border(10px);
-background-color: map-get($colours, "primary");
+background-color: $primary;
 color: map-get($colours, "white-text");
 font-size: 1rem;
 font-weight: 500;
@@ -132,8 +122,8 @@ cursor: pointer;
 transition: all 0.3s ease-in-out;
 &:hover {
     background-color: map-get($colours, "white-text");
-    color: map-get($colours, "primary");
-    border: 2px solid map-get($colours, "primary");
+    color: $primary;
+    border: 2px solid $primary;
 }
 };
 .invalid-feedback {
@@ -143,7 +133,7 @@ transition: all 0.3s ease-in-out;
     @include flex-form;
 };
 .form-control {
-  border: 1px solid map-get($colours, "primary");
+  border: 1px solid $primary;
   border-radius: 10px;
 };
 .vibe-color {
@@ -172,9 +162,9 @@ transition: all 0.3s ease-in-out;
 };
 
 .sign-up {
-  color: map-get($colours, "primary");
+  color: $primary;
   background-color: map-get($colours, "white-text");
-  border: 2px solid map-get($colours, "primary");
+  border: 2px solid $primary;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   &:hover {
@@ -187,19 +177,19 @@ transition: all 0.3s ease-in-out;
   margin-top: 10rem;
 };
 .search-border {
-  border: 1px solid map-get($colours, "primary");
+  border: 1px solid $primary;
   border-radius: 10px;
-  color: map-get($colours, "primary");
+  color: $primary;
   transition: all 0.3s ease-in-out;
   &:hover {
     outline: none;
-    background-color:  map-get($colours, "primary");
+    background-color:  $primary;
     color: map-get($colours, "white-text");
   }
 };
 textarea {
   @include input-border(10px);
-  color: map-get($colours, "primary");
+  color: $primary;
   transition: all 0.3s ease-in-out;
   &:focus {
     outline: none;
@@ -239,7 +229,7 @@ textarea {
 .post-number,
 .followers-number,
 .following-number {
-  color: map-get($colours, "primary");
+  color: $primary;
   font-size: 1.2rem;
   margin: 0;
   padding: 0;
@@ -249,7 +239,7 @@ textarea {
 };
 .follow-btn {
   @include button-border(10px);
-  background-color: map-get($colours, "primary");
+  background-color: $primary;
   color: map-get($colours, "white-text");
   font-size: 1rem;
   font-weight: 500;
@@ -259,12 +249,12 @@ textarea {
   transition: all 0.3s ease-in-out;
   &:hover {
       background-color: map-get($colours, "white-text");
-      color: map-get($colours, "primary");
-      border: 2px solid map-get($colours, "primary");
+      color: $primary;
+      border: 2px solid $primary;
   }
 };
 .username {
-  color: map-get($colours, "primary");
+  color: $primary;
   font-size: 1.5rem;
   margin: 0;
   padding: 0;
