@@ -99,17 +99,17 @@
               class="nav-link active"
               aria-current="page"
               href="/feed/feed.html"
-              >Vibe Feed</a
+              >Feed</a
             >
-            <a class="nav-link z-3" href="/profile/profile.html">Vibe Profile</a>
+            <a class="nav-link z-3" href="/profile/profile.html">Profile</a>
             <select class="form-select w-50 d-block d-sm-none text-center border-0" aria-label="post selection">
-              <option >Vibe Menu</option>
+              
               <option selected value="1">Recent post</option>
               <option value="2">Last week</option>
               <option value="3">All post</option>
             </select>
             <input
-          class="form-control mt-2 d-block d-sm-none w-50 text-center"
+          class="form-control mt-2 d-block d-sm-none w-25 text-center"
           type="search"
           placeholder="Search"
           aria-label="Search"
@@ -120,14 +120,8 @@
           </div>
           
         </div>
-        <select class="form-select w-50 me-4 d-none d-sm-block" aria-label="post selection">
-          <option selected>Vibe Menu</option>
-          <option value="1">Recent post</option>
-          <option value="2">Last week</option>
-          <option value="3">All post</option>
-        </select>
         <input
-          class="form-control me-2 d-none d-md-block w-50"
+          class="form-control me-2 d-none d-md-block w-25"
           type="search"
           placeholder="Search"
           aria-label="Search"
@@ -135,13 +129,16 @@
         <button class="btn h-50 d-none d-md-block" type="submit">
           <i class="fa-solid fa-magnifying-glass search-border p-2 "></i>
         </button>
+        <a class="nav-link text-center" aria-current="page" href="/index.html"
+            >Sign out</a>
+        </div>
       </nav>
     </header>
     <main class="main-margin-feed-page">
 
         <!-- Area to create new posts -->
         <div class="container text-center">
-          <div class="row border-bottom">
+          <div class="row ">
             <div class="col">
               <div class="form-floating h-100">
                 <textarea class="form-control fw-medium h-100" placeholder="Write you vibe post here" id="floatingTextarea"></textarea>
