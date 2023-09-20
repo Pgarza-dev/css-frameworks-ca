@@ -1,7 +1,8 @@
-$primary: #26BFBF;
-$secondary: #F39237;
-@import "../../node_modules/bootstrap/scss/bootstrap";
 
+$secondary: #F39237;
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "_variables.scss";
 // Path: src/scss/styles.scss
 
 $colours: (
