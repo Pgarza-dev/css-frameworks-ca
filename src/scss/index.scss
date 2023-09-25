@@ -1,10 +1,6 @@
 $primary: #26BFBF;
 $secondary: #F39237;
 
-@import "../../node_modules/bootstrap/scss/bootstrap";
-@import "variables.scss";
-// Path: src/scss/styles.scss
-
 $colours: (
   
   "secondary": #F39237,
@@ -14,6 +10,12 @@ $colours: (
   "black-text": #000000,
   "invalide": #ff0000,
 );
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+// Path: src/scss/styles.scss
+
+
 
 @mixin button-border($radius) {
     border-radius: $radius;
